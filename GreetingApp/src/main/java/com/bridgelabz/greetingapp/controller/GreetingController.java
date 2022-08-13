@@ -36,4 +36,17 @@ public class GreetingController {
     public String getbyservice(){
         return greetingService.getmessage();
     }
+
+    //UC3
+    @GetMapping("/hello")
+    public String sayPosting(@RequestParam(required = false) String firstName,
+                             @RequestParam(required = false) String lastName) {
+        if (lastName == null) lastName = "";
+        else if (firstName == null) firstName = "";
+        else if (firstName == null && lastName == null) {
+            firstName = "";
+            lastName = "";
+        }
+        return greetingService.sayHelloByName(firstName, lastName);
+    }
 }
