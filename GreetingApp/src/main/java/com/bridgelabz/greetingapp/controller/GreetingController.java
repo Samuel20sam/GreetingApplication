@@ -38,6 +38,7 @@ public class GreetingController {
 //   * @Func :Ability To Find By id - for eg:"id=2"
 //   * @URL: http://localhost:8080/path/2
 //   * @Return: Value at id 2
+
     @GetMapping("/path/{id}")
     public Greeting getElementById(@PathVariable Long id){
         return greetingService.getGreetingById(id);
